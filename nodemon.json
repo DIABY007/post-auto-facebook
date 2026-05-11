@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "fb_sessions/*",
+    "uploads/*",
+    "error_*.png",
+    "debug_render.png",
+    "node_modules/*"
+  ],
+  "delay": "1000"
+}

@@ -1,0 +1,8 @@
+node_modules/
+.env
+fb_session/
+fb_sessions/
+uploads/
+error_*.png
+debug_render.png
+.agents/

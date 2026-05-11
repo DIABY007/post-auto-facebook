@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "puppeteer": {
+      "source": "aidotnet/moyucode",
+      "sourceType": "github",
+      "skillPath": "skills/tools/puppeteer/SKILL.md",
+      "computedHash": "53f4afa526808c3d3754ef575b35425fab526342fd5c3070df11c6a4b37717eb"
+    },
+    "puppeteer-automation": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "puppeteer-automation/SKILL.md",
+      "computedHash": "d24300d65f0114bed5d9779feb4df06d458adb684ce5bbcdd1907ece7fc9f07e"
+    },
+    "puppeteer-skill": {
+      "source": "lambdatest/agent-skills",
+      "sourceType": "github",
+      "skillPath": "puppeteer-skill/SKILL.md",
+      "computedHash": "88a6ee5cef8ceec736e34eb78defad5e86f3c6bc32d40f4054af5c59488c42bf"
+    }
+  }
+}

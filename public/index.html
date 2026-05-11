@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Auto Poster & Scraper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="postTab">🚀 Auto Poster</button>
+            <button class="tab-btn" data-tab="scrapeTab">🔍 Group Scraper</button>
+        </div>
+
+        <!-- Section Publication -->
+        <div id="postTab" class="tab-content active">
+            <h1>📤 Publication Automatique</h1>
+            <form id="postForm">
+                <div class="form-group">
+                    <label for="accountId">Compte Facebook à utiliser</label>
+                    <div style="display: flex; gap: 10px;">
+                        <select id="accountId" name="accountId" style="flex: 1;">
+                            <option value="principal">Principal</option>
+                        </select>
+                        <button type="button" id="addNewAccount" class="secondary-btn" style="width: auto; padding: 0 15px;">➕ Nouveau</button>
+                    </div>
+                    <div id="newAccountDiv" style="display: none; margin-top: 10px; flex-direction: column; gap: 5px;">
+                        <input type="text" id="newAccountName" placeholder="Nom du nouveau compte (ex: compte_2)">
+                        <p style="font-size: 0.8em; color: #666;">Note: La première utilisation ouvrira une fenêtre pour vous connecter.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description du post</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Votre message..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="images">Images</label>
+                    <input type="file" id="images" name="images" multiple accept="image/*">
+                    <div id="imagePreview"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="groups">IDs des Groupes (un par ligne)</label>
+                    <textarea id="groups" name="groups" rows="3" placeholder="ID1&#10;ID2" required></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn">🚀 Lancer la publication</button>
+            </form>
+        </div>
+
+        <!-- Section Scraper -->
+        <div id="scrapeTab" class="tab-content">
+            <h1>🔍 Identifier vos Groupes</h1>
+            <p class="subtitle">Collez vos IDs pour récupérer les noms correspondants.</p>
+            <form id="scrapeForm">
+                <div class="form-group">
+                    <label for="scrapeGroups">IDs des Groupes (un par ligne)</label>
+                    <textarea id="scrapeGroups" name="groups" rows="6" placeholder="ID1&#10;ID2" required></textarea>
+                </div>
+                <button type="submit" id="scrapeBtn">🔍 Récupérer les noms</button>
+            </form>
+
+            <div id="scrapeResults" style="margin-top: 20px; display: none;">
+                <h3>Résultats</h3>
+                <div class="table-container">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom du Groupe</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <button id="downloadJson" class="secondary-btn">💾 Exporter en JSON</button>
+            </div>
+        </div>
+        
+        <div id="status" class="status"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
